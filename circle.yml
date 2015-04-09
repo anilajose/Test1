@@ -16,6 +16,3 @@ test:
     - gradle check jacocoTestReport
   post:
     #- cp -R build/reports/* $CIRCLE_ARTIFACTS
-notifications:
-  email:
-  - anila.jose@ust-global.com
