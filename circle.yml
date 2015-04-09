@@ -6,6 +6,13 @@ general:
   #artifacts:
     #- "~/simplecov"
 machine:
-  ruby:
-    version: 2.0.0-p598
- 
+  environment:
+    TERM: dumb
+  java:
+    version: openjdk7
+
+test:
+  override:
+    - gradle check jacocoTestReport
+  post:
+    - cp -R build/reports/* $CIRCLE_ARTIFACTS
